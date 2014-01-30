@@ -1,1 +1,44 @@
-hola
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>JavaScript Temperature Converter</title>
+      <link href="temp.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src="temperature.js"></script>
+	  <script type="text/javascript" src="jquery.js"></script>
+  </head>
+  <body>
+  <div class="center">
+			<div id="infoBar"> 
+				<input id="original" onchange="resolve();" style="float:left;margin:15 10">
+				<img src="rueda.png" id ="rueda" width="50" style="float:left "/>
+				<div id = "converted" class ="output" style="float:right;margin:15 10;display:none;"></div>
+			</div>
+	</div>
+  </body>
+
+
+
+<script>
+function resolve(){
+	AnimateRotate(360);
+	calculate();
+	Mostrar();
+}
+function AnimateRotate(angle) {
+    var $elem = $('#rueda');
+    $({deg: 0}).animate({deg: angle}, {
+        duration: 1000,
+        step: function(now) {
+            $elem.css({
+                transform: 'rotate(' + now + 'deg)'
+            });
+        }
+    });
+}
+function Mostrar(){
+	$( ".output" ).show("fast");
+}
+</script>
+
+
+</html>
