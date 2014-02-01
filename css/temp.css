@@ -1,0 +1,34 @@
+#mercurio{
+	background-color:red;
+	width:252px;
+	height:409px;
+	overflow: visible !important;
+	
+}
+#termometro{
+	width:252px;
+	height:409px;
+}
+#img{
+	background-image:url('temp.png');
+	width:252px;
+	height:409px;
+}
+.center{
+margin: 0 auto;
+width:800px;
+}
+.left{
+	float:left;
+}
+#infoBar{
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+width:340px;
+height:50px;
+background-color: #8C8783;
+
+
+
+}

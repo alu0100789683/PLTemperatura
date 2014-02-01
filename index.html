@@ -1,24 +1,91 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>JavaScript Temperature Converter</title>
-      <link href="temp.css" rel="stylesheet" type="text/css">
-     <script type="text/javascript" src="temperature.js"></script>
-	  <script type="text/javascript" src="jquery.js"></script>
-  </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Procesadores de Lenguajes , alu0100789683</title>
+
+	  <link href="css/temp.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src="js/temperature.js"></script>
+	  <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="home.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<link href="css/ui-darkness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+	$(function() {
+		$( "#dialog" ).dialog({
+			autoOpen: false,
+			width: 800,
+			height: 600,
+			buttons: [
+				{
+					text: "Ok",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				},
+				{
+					text: "Cancel",
+					click: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			]
+		});
+		// Link to open the dialog
+		$( "#practica1-link" ).click(function( event ) {
+			AnimateRotate(360);
+			$( "#dialog" ).dialog( "open" );
+			event.preventDefault();
+		});
+	});
+	</script>
+
+	</head>
   <body>
-  <div class="center">
-			<div id="infoBar"> 
-				<input id="original" onchange="resolve();" style="float:left;margin:15 10">
-				<img src="rueda.png" id ="rueda" width="50" style="float:left "/>
-				<div id = "converted" class ="output" style="float:right;margin:15 10;display:none;"></div>
-			</div>
+
+<!-- Practica 1 -->
+<div id="dialog" title="Práctica 1 : Conversor de Temperatura">
+<div class="left" style="border-right:1px solid #E9E9E9;
+float:left;width:300px;height:100%;padding:15px">
+	Conversor de Temperatura de grados 
+	centígrados a Fahrenheit y viceversa ,
+	con tratamiento de los datos introducidos
+	mediante expresiones regulares, permite 
+	introducir valores en múltiples formatos.
+	El conversor soporta multiples formatos:</br>
+	>> - 5e-2C</br>
+	Signo / Decimal / Signo del exponente / Exponente / C o F para la conversion Celcius o Fahrenheit
+</div>
+ <div class="right" style="margin-left:345px;">
+			<!--<div id="infoBar"> -->
+				<input id="original" onchange="resolve();" style="margin:15 10;">
+				<img src="rueda.png" id ="rueda" width="50" style=""/></br>
+				<div id = "converted" class ="output" style="margin:15 10;display:none; background:red;float:left;-webkit-border-radius: 5px;
+-moz-border-radius: 5px;border:1px solid #E9E9E9;padding:10px; "></div>
+			<!--</div>-->
 	</div>
-  </body>
-
-
-
-<script>
+	<script>
 function resolve(){
 	AnimateRotate(360);
 	calculate();
@@ -39,6 +106,73 @@ function Mostrar(){
 	$( ".output" ).show("fast");
 }
 </script>
+</div>
 
 
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Procesadores de Lenguajes</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Prácticas</a></li>
+            <li><a href="#about">Proyectos</a></li>
+            <li><a href="#contact">Url's</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+	
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+			<h1>alu0100789683</h1>
+            <h2>Procesadores de Lenguajes</h2>
+          </div>
+          <div class="row">
+            <div class="col-6 col-sm-6 col-lg-4">
+              <h2>Práctica 1</h2>
+              <p>Conversor de Temperatura de grados centígrados a Fahrenheit y viceversa , con tratamiento de los datos introducidos mediante expresiones regulares, permite introducir valores en múltiples formatos</p>
+              <p><a class="btn btn-default" id="practica1-link" href="#" role="button">Abrir &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Prácticas</a>
+            <a href="#" class="list-group-item">Proyectos</a>
+            <a href="#" class="list-group-item">URL's</a>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; alu0100789683 , Universidad de La Laguna</p>
+      </footer>
+
+    </div><!--/.container-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="offcanvas.js"></script>
+  </body>
 </html>
