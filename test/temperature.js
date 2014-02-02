@@ -3,27 +3,46 @@ function calculate() {
   var result;
   var original = document.getElementById("original");
   var temp = original.value;
-  var regexp = /([+-]?\d+(?:\.\d+)?)(?:[eE]([+-]?\d+))?([cCfF])/;
+  var regexp = /([+-]?\d+(?:\.\d+)?)(?:[eE]([+-])?(\d+))?([cCfF])/;
   
   var m = temp.match(regexp);
   
   if (m) {
 	var num = m[1];
-	var exp = m[2];
-    var type = m[3];
+	var expS = m[2];
+	var exp = m[3];
+    var type = m[4];
     num = parseFloat(num);
     if (type == 'c' || type == 'C') {
+		
+		
 		if(exp){
-			exp = parseFloat(exp);
-			num = Math.pow(num,exp);
+			if(expS && expS=='-'){
+				for (var i=0;i<exp;i++){
+					num = num / 10;
+				}
+			}else{
+				for (var i=0;i<exp;i++){
+					num = num * 10;
+				}
+			}
 		}
 		result = (num * 9/5)+32;
 		result = result + 'F';
     }
     else {
+		
+		
 		if(exp){
-			exp = parseFloat(exp);
-			num = Math.pow(num,exp);
+			if(expS && expS=='-'){
+				for (var i=0;i<exp;i++){
+					num = num / 10;
+				}
+			}else{
+				for (var i=0;i<exp;i++){
+					num = num * 10;
+				}
+			}
 		}
 		result = (num - 32)*5/9;
 		result = result + 'C';
@@ -31,6 +50,6 @@ function calculate() {
     converted.innerHTML = result.slice(0,15);
   }
   else {
-		converted.innerHTML = "ERROR! Try something like '-4.2C' instead";
+		converted.innerHTML = "Expresión Inválida , los signos y</br> el exponente es opcional </br> Requerido Un digito (1 , 2 , 3 , ...) </br>y Simbolo de conversion (C o F)";
 	}
 }
