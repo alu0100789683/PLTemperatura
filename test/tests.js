@@ -14,9 +14,9 @@ describe('Conversor de Temperaturas', function() {
 	question4: '-1F',
         answer4: '-18.33333333333',
 	question5: '+1e3C',
-        answer5: '33.8F',
+        answer5: '1832F',
 	question6: '+1e-3F',
-        answer6: '-17.22222222222',
+        answer6: '-17.77722222222',
     };
 
     before(function() {
